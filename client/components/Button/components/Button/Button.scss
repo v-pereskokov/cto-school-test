@@ -1,0 +1,32 @@
+.Button {
+    @extend %pButton;
+
+    display: inline-block;
+
+    box-sizing: border-box;
+    padding: 14px 30px;
+
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+
+    border-style: solid;
+    border-radius: 2px;
+    outline: 0;
+
+    &__primary {
+        @include buttonType($primary, $black);
+    }
+
+    &__secondary {
+        @include buttonType($lightest, $white, $black);
+    }
+
+    &__danger {
+        @include buttonType($danger, $black);
+    }
+
+    &__success {
+        @include buttonType($success, $black);
+    }
+}

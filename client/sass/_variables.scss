@@ -1,0 +1,72 @@
+$background: #000;
+$contentBackground: #2a2a2a;
+
+$headerColor: #111;
+$accent: #f8d830;
+$divider: #303030;
+
+// Text
+$grey: #bcbcbc;
+
+$border-radius: 8px;
+
+$white: #fff;
+$black: #000;
+
+$green: #2ac272;
+$pink: #f95b8b;
+$red: #e23b6e;
+$yellow: #ffbe00;
+
+$grays: ();
+$colors: (
+    'green': $green,
+    'pink': $pink,
+    'red': $red,
+);
+
+$primary: #ffd700;
+$secondary: #282828;
+$light: #787878;
+$lighter: #c7c7c7;
+$lightest: #e2e2e2;
+$success: $green;
+$danger: $red;
+
+$theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'light': $light,
+    'lighter': $lighter,
+    'lightest': $lightest,
+    'success': $success,
+    'danger': $danger,
+);
+
+$body-bg: $white;
+$body-color: $secondary;
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-family-base: 'Roboto', sans-serif;
+$font-family-logo-start: 'Indie Flower', cursive;
+$font-family-logo-matter: 'Dancing Script', cursive;
+
+$font-weight-lighter: lighter;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-weight-bolder: bolder;
+
+$text-muted: $light;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+$fonts: (
+    'primary': (
+        'Roboto',
+        sans-serif,
+    ),
+);
+
+$design-original-screen-width: 1440px;

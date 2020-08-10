@@ -1,0 +1,23 @@
+html,
+body {
+    margin: 0;
+    font-family: $font-family-base;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+html,
+body,
+#root {
+    background-color: $contentBackground !important;
+}
+
+a {
+    color: $white;
+    text-decoration: none;
+}

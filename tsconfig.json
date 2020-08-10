@@ -1,0 +1,64 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "target": "es5",
+        "jsx": "react",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "noImplicitReturns": false,
+        "removeComments": false,
+        "resolveJsonModule": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "outDir": "./dist",
+        "lib": ["dom", "es2017"],
+        "baseUrl": ".",
+        "paths": {
+            "__store": ["./client/store.ts"],
+            "__index": ["./client/index.tsx"],
+            "__actions": ["./client/actions.ts"],
+            "__reducers*": ["./client/reducers/index.ts"],
+            "__types": ["./client/types.ts"],
+            "__consts": ["./client/consts.ts"],
+
+            "__api/*": ["./client/api/*"],
+            "__assets/*": ["./client/assests/*"],
+            "__config/*": ["./client/config/*"],
+            "__locale/*": ["./client/locale/*"],
+            "__containers/*": ["./client/containers/*"],
+            "__loaders/*": ["./client/loaders/*"],
+            "__selectors/*": ["./client/selectors/*"],
+            "__services/*": ["./client/services/*"],
+            "__types/*": ["./client/types/*"],
+            "__components/*": ["./client/components/*"],
+            "__utils/*": ["./client/utils/*"],
+            "__reducers/*": ["./client/reducers/*"],
+
+            "*": ["node_modules/*", "server/*", "client/*", "*"]
+        },
+        "typeRoots": ["@types/**/*.d.ts", "node_modules/@types"],
+        "plugins": [
+            {
+                "transform": "ts-transformer-keys/transformer"
+            },
+            {
+                "transform": "typescript-plugin-styled-components",
+                "type": "config",
+                "minify": true,
+                "ssr": true
+            }
+        ]
+    },
+    "include": [
+        "client",
+        "server",
+        "@types/**/*.d.ts",
+        "node_modules/@types"
+    ],
+    "compileOnSave": false,
+    "exclude": ["node_modules", "dist"]
+}
