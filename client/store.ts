@@ -15,7 +15,7 @@ import config from '__config/config';
 import routerReducer from '__reducers/router';
 import isServer from '__utils/isServerEnvCheker';
 
-function configureStore(reducers, initialState = {}, options?: StoreOptions) {
+function configureStore(reducers = {}, initialState = {}, options?: StoreOptions) {
     const {isLogger, router} = options || ({} as StoreOptions);
 
     const history = !isServer

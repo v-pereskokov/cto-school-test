@@ -27,7 +27,7 @@ export default function preload<E>(params: Preload<E>) {
         }
 
         const omittedProps = [
-            makeModel<Props>(m => m.isReady),
+            makeModel<Props>(m => m?.isReady),
         ];
 
         class PreloadPage extends React.PureComponent<Props> {
@@ -62,26 +62,20 @@ export default function preload<E>(params: Preload<E>) {
             }
 
             private preload = ({isRestart}: PreloadProcessOptions) => {
-                const {onLoad} = params;
-
                 commonActions.preload[
                     (isRestart ? 'setAsReStart' : 'setAsStart') as keyof typeof commonActions.preload
                 ]();
 
-                if (onLoad) {
-                    this.preloadProc()
-                        .then(commonActions.preload.setAsReady)
-                        .catch(commonActions.preload.setAsErrorReady);
-                } else {
-                    commonActions.preload.setAsReady();
-                }
+                this.preloadProc()
+                    .then(commonActions.preload.setAsReady)
+                    .catch(commonActions.preload.setAsErrorReady);
             };
 
             private preloadProc = () => {
                 const {onLoad} = params;
 
                 if (!onLoad) {
-                    return;
+                    return Promise.resolve();
                 }
 
                 return new Promise(async (resolve, reject) => {

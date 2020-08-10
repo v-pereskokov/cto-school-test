@@ -1,8 +1,9 @@
-import {ReactNode} from 'react';
+import {ReactNode, ErrorInfo} from 'react';
+import {Nullable} from 'utils';
 
 export interface State {
-    error: Error;
-    errorInfo: any;
+    error: Nullable<Error>;
+    errorInfo: Nullable<ErrorInfo>;
 }
 
 export interface Props {

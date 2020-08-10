@@ -1,6 +1,7 @@
 import {ConnectedRouter} from 'connected-react-router';
-import React, {FC} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import {hot} from 'react-hot-loader/root';
 import Loadable from 'react-loadable';
 import {Provider} from 'react-redux';
 
@@ -9,17 +10,20 @@ import store, {history} from '__utils/infrastructure/store';
 
 import './sass/main.scss';
 
-const render = (Component: React.ComponentType) =>
-    ReactDOM.hydrate(
+const render = (Component: React.ComponentType) => {
+    const HotComponent = hot(Component);
+
+    return ReactDOM.hydrate(
         (
             <Provider store={store}>
                 <ConnectedRouter history={history}>
-                    <Component/>
+                    <HotComponent/>
                 </ConnectedRouter>
             </Provider>
         ),
         document.getElementById('root'),
     );
+};
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 let state;
@@ -34,13 +38,7 @@ if (typeof window === 'undefined') {
 
     window.onload = () => {
         Loadable.preloadReady().then(() => {
-            render(Core as FC);
+            render(Core);
         });
     };
-}
-
-if ((module as any).hot) {
-    (module as any).hot.accept('./index.tsx', () => {
-        render(require('./containers/Core'));
-    });
 }

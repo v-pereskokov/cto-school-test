@@ -1,4 +1,4 @@
-import {memo} from 'react';
+import {memo, FC} from 'react';
 
 import asPage from '__utils/hocs/asPage';
 
@@ -9,4 +9,4 @@ import preloader from './preloader';
 export default asPage({
     ...PAGE_SETTINGS,
     preloader,
-})(memo(Page));
+})(memo(Page)) as FC;

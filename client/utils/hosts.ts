@@ -1,12 +1,12 @@
 export const APP_HOSTS = {
     UNSTABLE: [
         'mac.ivpa.home',
-        'mac.ivpa.home:4103',
-        'localhost:4103',
+        'mac.ivpa.home:3000',
+        'localhost:3000',
     ],
     TESTING: [
         'mac.ivpa.home',
-        'mac.ivpa.home:4103',
+        'mac.ivpa.home:3000',
     ],
     STABLE: [
         'agm.com',

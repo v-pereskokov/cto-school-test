@@ -1,9 +1,13 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const config = require('../../config');
+
+const {__DEV__} = config.globals;
+
 module.exports = () => webpackConfig => {
     const cssLoaders = [
         {loader: './webpack/loaders/b_-loader/loader.js'},
-        MiniCssExtractPlugin.loader,
+        __DEV__ ? {loader: 'style-loader'} : MiniCssExtractPlugin.loader,
         {loader: 'css-loader'},
         {loader: 'postcss-loader'},
     ];
@@ -20,7 +24,7 @@ module.exports = () => webpackConfig => {
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[name].css',
-        })
+        }),
     );
 
     webpackConfig.module.rules.push(

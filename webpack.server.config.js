@@ -11,7 +11,7 @@ const {
 const webpackConfig = flow([
     initServerConfig({
         entry: {
-            app: ['./static/server/index.tsx'],
+            app: ['./server/index.ts'],
         },
         context: __dirname,
         provideClient: {

@@ -20,13 +20,11 @@ module.exports = ({
 
     if (isCopyStatic) {
         webpackConfig.plugins.push(
-            new CopyWebpackPlugin({
-                patterns: [
-                    {from: './client/images', to: 'images'},
-                    {from: './www/favicons', to: 'favicons'},
-                    {from: './www/robots.txt', to: ''},
-                ],
-            }),
+            new CopyWebpackPlugin([
+                {from: './client/images', to: 'images'},
+                {from: './www/favicons', to: 'favicons'},
+                {from: './www/robots.txt', to: ''},
+            ]),
         );
     }
 

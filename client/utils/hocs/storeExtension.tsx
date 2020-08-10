@@ -1,11 +1,9 @@
-import {Assign, Indexed} from 'infrastructure/utils';
 import React, {ComponentType} from 'react';
 import {Reducer} from 'redux';
-
+import {Assign, Indexed} from 'utils';
 
 import {CommonStore} from '__utils/infrastructure/store';
 import store, {ExtendedState} from '__utils/infrastructure/store';
-
 
 // позволяет проверить, что переданный extention соответствует заявленному в BundleState
 type ExtractExtention<TBundleState> = TBundleState extends Assign<CommonStore, infer E>
@@ -22,7 +20,7 @@ export default function storeExtension<E extends ExtendedState<any> = any>(exten
 
                 const componentStore = Object.keys(extention)[0];
                 if (!store.getState().hasOwnProperty(componentStore)) {
-                    store.recombineStoreWith(extention);
+                    store.recombineStoreWith(extention as any);
                 }
 
             }

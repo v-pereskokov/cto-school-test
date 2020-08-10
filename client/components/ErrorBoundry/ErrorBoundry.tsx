@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {ErrorInfo} from 'react';
 
 import {Props, State} from './types';
+
+const {__PROD__} = process.env;
 
 export default class ErrorBoundary extends React.PureComponent<Props, State> {
     public state: State = {
@@ -8,22 +10,21 @@ export default class ErrorBoundary extends React.PureComponent<Props, State> {
         errorInfo: null,
     };
 
-    public componentDidCatch(error, errorInfo) {
+    public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         this.setState({error, errorInfo});
     }
 
     public render() {
-        const {state} = this;
         const {children} = this.props;
 
-        if (state.errorInfo) {
+        if (!__PROD__ && this.state.errorInfo) {
             return (
                 <>
-                    <h2>Something went wrong.</h2>
+                    <h2>Что-то пошло не так.</h2>
                     <details style={{whiteSpace: 'pre-wrap'}}>
-                        { state.error && state.error.toString() }
+                        { this.state.error && this.state.error.toString() }
                         <br/>
-                        { state.errorInfo.componentStack }
+                        { this.state.errorInfo.componentStack }
                     </details>
                 </>
             );

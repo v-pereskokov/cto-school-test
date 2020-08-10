@@ -7,7 +7,7 @@ const config = {
     path_base: path.resolve(__dirname, '..'),
     path_client: path.resolve(__dirname, '../client'),
 
-    dir_static: './',
+    dir_static: '',
     dir_client: 'client',
     dir_client_dist: 'dist/client',
     dir_server_dist: 'dist/server',

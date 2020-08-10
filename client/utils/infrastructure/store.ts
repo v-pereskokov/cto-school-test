@@ -9,22 +9,10 @@ import {Assign, Indexed} from 'utils';
 
 import {reducers, BaseStore} from '__reducers';
 import routerReducer from '__reducers/router';
-import {getErrorsSelector} from '__selectors/logs';
 import configureStore from '__store';
-
 
 const state = (window as any).__PRELOADED_STATE__;
 delete (window as any).__PRELOADED_STATE__;
-
-function alarm(state: CommonStore) {
-    const errors = getErrorsSelector(state);
-    errors.map(error => {
-        // eslint-disable-next-line no-console
-        console.error(error);
-    });
-}
-
-alarm(state);
 
 const {store: reduxStore, history} = configureStore(reducers, state, {isLogger: true});
 

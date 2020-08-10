@@ -186,10 +186,5 @@ module.exports = {
                 beforeClosing: 'never'
             }
         ],
-
-        globals: {
-            IS_STABLE: true,
-            IS_SERVER: true
-        },
     }
 };
