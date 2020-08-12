@@ -31,7 +31,9 @@
 
         appearance: none;
 
-        &:hover, &:active, &:focus {
+        &:hover,
+        &:active,
+        &:focus {
             border-color: $primary;
         }
     }

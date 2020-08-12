@@ -1,8 +1,9 @@
 import cookieParser from 'cookie-parser';
 import express from 'express';
+import {parse} from 'qs';
 import https from 'https';
 import selfSigned from 'openssl-self-signed-certificate';
-import {parse} from 'qs';
+import rateLimit from 'express-rate-limit';
 import Loadable from 'react-loadable';
 
 import {checkHeaders} from './controllers/checkHeaders';
@@ -26,6 +27,10 @@ server.set('query parser', (query: string) => {
 server
     .use(cookieParser())
     .use(checkHeaders)
+    .use(rateLimit({
+        windowMs: 15 * 60 * 1000,
+        max: 100,
+    }))
     .use('/dist', express.static('dist/client'))
     .use('/favicons', express.static('dist/client/favicons'))
     .use(router)
@@ -46,3 +51,4 @@ server
             console.error(err);
         });
 })();
+

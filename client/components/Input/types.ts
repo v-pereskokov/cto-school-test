@@ -1,5 +1,5 @@
 import {FC, InputHTMLAttributes, MutableRefObject} from 'react';
-import { Nullable } from 'utils';
+import {Nullable} from 'utils';
 
 export type OwnProps = {
     label?: string;

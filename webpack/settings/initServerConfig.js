@@ -1,4 +1,8 @@
 const webpack = require('webpack');
+const merge = require('lodash.merge');
+const {config: envConfig} = require('dotenv');
+
+envConfig();
 
 const webpackNodeExternals = require('webpack-node-externals');
 
@@ -6,6 +10,8 @@ const config = require('../../config');
 
 const {__DEV__} = config.globals;
 const paths = config.utils_paths;
+
+const {DADATA_TOKEN, OPEN_WEATHER_TOKEN} = process.env;
 
 module.exports = ({entry, context, provideClient = {}}) => webpackConfig => {
     Object.assign(webpackConfig, {
@@ -48,9 +54,15 @@ module.exports = ({entry, context, provideClient = {}}) => webpackConfig => {
 
         plugins: [
             new webpack.ProgressPlugin(),
-            new webpack.DefinePlugin({
-                ...config.globals,
-            }),
+            new webpack.DefinePlugin(merge(
+                config.globals,
+                {
+                    'process.env': {
+                        DADATA_TOKEN: JSON.stringify(DADATA_TOKEN),
+                        OPEN_WEATHER_TOKEN: JSON.stringify(OPEN_WEATHER_TOKEN),
+                    },
+                },
+            )),
             new webpack.ProvidePlugin(provideClient),
         ],
 
