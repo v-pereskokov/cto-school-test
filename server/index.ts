@@ -9,7 +9,7 @@ import {checkHeaders} from './controllers/checkHeaders';
 import notFound from './controllers/notFound';
 import router from './router';
 
-const PORT = 3000;
+const PORT = 4000;
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 const server = express();

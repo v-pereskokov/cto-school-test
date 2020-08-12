@@ -42,6 +42,9 @@ module.exports = () => webpackConfig => {
                     options: {
                         resources: [
                             'client/sass/_variables.scss',
+                            'client/sass/_functions.scss',
+                            'client/sass/_mixins.scss',
+                            'client/sass/_extendable.scss',
                             'client/sass/_reset.scss',
                         ],
                     },

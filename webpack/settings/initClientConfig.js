@@ -108,6 +108,12 @@ module.exports = ({entry, context, alias}) => webpackConfig => {
         }
     });
 
+    if (__DEV__) {
+        webpackConfig.plugins.push(
+            new webpack.HotModuleReplacementPlugin(),
+        );
+    }
+
     if (__PROD__) {
         webpackConfig.plugins.push(
             new DuplicatePackageCheckerPlugin(),

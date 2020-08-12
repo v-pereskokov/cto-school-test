@@ -4,6 +4,7 @@ import {Switch} from 'react-router';
 import Layout from '__components/Layout';
 import {getRoutes} from '__utils/routes/makeRoutes';
 
+import '__containers/Weather';
 import '__containers/NotFound';
 
 const Wrapper = () => {

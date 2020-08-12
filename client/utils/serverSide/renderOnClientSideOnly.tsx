@@ -2,7 +2,7 @@ import React from 'react';
 
 import isServer from '__utils/isServerEnvCheker';
 
-export default function renderOnClientSideOnly(
+export function renderOnClientSideOnly(
     Component: React.ComponentType,
     props: any,
 ) {

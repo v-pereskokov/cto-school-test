@@ -1,0 +1,21 @@
+.WeatherMap {
+    color: $white !important;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+
+        &Title {
+            & h1 {
+                font-size: 48px;
+                text-transform: uppercase;
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+
+    &__preview {
+        height: 30vh;
+        position: relative;
+    }
+}

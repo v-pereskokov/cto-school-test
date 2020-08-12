@@ -4,7 +4,7 @@ set -e
 TAG=${1:-`date '+%Y%m%d%H%M%S'`}
 REGISTRY=${2:-vpereskokov/vpagroup}
 BUILD=${3:-testing}
-PORT=${4:-3000}
+PORT=${4:-4000}
 
 echo "${TAG}" "${REGISTRY}" "${BUILD}" "${PORT}"
 

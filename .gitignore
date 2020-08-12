@@ -28,3 +28,4 @@ static/build/
 test/tmp/*
 typings/source
 node_modules/
+.env

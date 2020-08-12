@@ -1,0 +1,4 @@
+%pButton {
+    @include makeFontFamily(rem(20px), 500, (16 / 14), 'secondary');
+    letter-spacing: 0.05em;
+}
