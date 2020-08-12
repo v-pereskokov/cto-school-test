@@ -221,7 +221,7 @@ curl 'https://localhost:4000/api/weather/current?lat=55.732181382713264&lon=37.6
 * Golang
 Проверяли через apache bench.
 
-### Написать кейгеня и кряки для ПО
+### Написать кейген и кряки для ПО
 Код: [GitHub](https://github.com/vladpereskokov/Technopark_InfoSec-Cracks)  
 Цель: Даны защищенные паролем ПО на Windows. Необходимо, применяя реверс-инжиниринг и не только, найти адрес памяти, где делается проверка пароля и высчитать пароль или написать кейген для взлома.  
 Стек:
@@ -231,7 +231,7 @@ curl 'https://localhost:4000/api/weather/current?lat=55.732181382713264&lon=37.6
 Код: [GitHub](https://github.com/vladpereskokov/iot-arduino-analog)  
 Цель: Самому спроектировать и запрограммировать в Протеусе микроконтроллер, который будет работать с различными устройствами.
 Что было сделано:
-* Три устройства в Прометеусе
+* Три устройства в Протеусе
 * Реальное устройство на реальной плате с подключёнными приборами
 * Всё находилось на разных машинах в одной локальной сети (виртуальные машины, телефоны и другие устройства)
 Примеры можно увидеть в репозитории  
@@ -251,6 +251,6 @@ curl 'https://localhost:4000/api/weather/current?lat=55.732181382713264&lon=37.6
 
 * [Защита](https://vk.com/wall-45881160_15130) крупной платформы для блогеров и рекламодателей (время начала: 23:25)
 * Ещё один [умный дом](https://github.com/vladpereskokov/Jarvis), но на arduino, C++ последних стандартов с паттернами и серверами и немного питона. Запись защиты проекта [тут](https://youtu.be/isFt27p8pgU?t=158)
-* [Бэкенд](https://github.com/vladpereskokov/Jira__backend) а-ля Jira на golang.  
+* [Бэкенд](https://github.com/vladpereskokov/Jira__backend) а-ля Jira на golang  
 * [Django](https://github.com/vladpereskokov/Technopark_Web)
 * [Мобильное приложение под Android](https://github.com/vladpereskokov/MusicGURU)
