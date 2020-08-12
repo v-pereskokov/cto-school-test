@@ -13,6 +13,7 @@ const Page: FC = () => {
 
             <h1 className={b('title')}>
                 Оденься по погоде в своём городе.
+                <p>(можно кликнуть по карте)</p>
             </h1>
 
             <div className={b('form')}>

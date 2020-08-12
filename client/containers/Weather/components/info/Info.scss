@@ -1,5 +1,13 @@
 .WeatherInfo {
+
+    $breakpoint-alpha: 480px;
     margin-top: 64px;
+    width: 100%;
+
+    &__link {
+        text-decoration: underline;
+        color: $yellow;
+    }
 
     &__divider {
         border-top: 1px solid $black;
@@ -7,5 +15,97 @@
 
     &__loader {
         text-align: center;
+    }
+
+    &__content {
+        display: block;
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .rwd-table {
+        width: 100%;
+
+        tr {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            display: none;
+        }
+
+        td {
+            display: block;
+
+            &:first-child {
+                padding-top: 0.5em;
+            }
+
+            &:last-child {
+                padding-bottom: 0.5em;
+            }
+
+            &::before {
+                content: attr(data-th) ': ';
+                font-weight: bold;
+
+                width: 6.5em;
+                display: inline-block;
+
+                @media (min-width: $breakpoint-alpha) {
+                    display: none;
+                }
+            }
+        }
+
+        th,
+        td {
+            text-align: left;
+
+            @media (min-width: $breakpoint-alpha) {
+                display: table-cell;
+                padding: 0.25em 0.5em;
+
+                &:first-child {
+                    padding-left: 0;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+
+        }
+    }
+
+    &__header {
+        text-align: center;
+        font-size: 28px;
+        font-weight: normal;
+    }
+
+    .rwd-table {
+        background: #34495e;
+        color: #fff;
+        border-radius: 0.4em;
+        overflow: hidden;
+
+        tr {
+            border-color: lighten(#34495e, 10%);
+        }
+
+        th,
+        td {
+            margin: 0.5em 1em;
+            @media (min-width: $breakpoint-alpha) {
+                padding: 1em !important;
+            }
+        }
+
+        th,
+        td::before {
+            color: #dd5;
+        }
     }
 }

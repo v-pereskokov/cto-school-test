@@ -4,6 +4,13 @@
     &__title {
         text-align: center;
         font-weight: normal;
+
+        & > p {
+            color: $lighter;
+            font-size: 12px;
+            text-align: center;
+            margin: 0;
+        }
     }
 
     &__form {
