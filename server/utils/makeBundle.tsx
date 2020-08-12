@@ -41,6 +41,7 @@ export function makeBundle ({bundleName, styles = [], styledTags, scripts = [], 
                 ${helmet.meta.toString()}
                 ${helmet.link.toString()}
                 
+                <link href="dist/app.css" rel="preload">
                 <link href="dist/Weather.css" rel="preload">
                 ${styledTags}
                 ${styles.map(style => `<style rel="preload">${fs.readFileSync(`dist/client/${style.file}`, 'utf-8')}</style>`).join('\n')}
@@ -52,7 +53,7 @@ export function makeBundle ({bundleName, styles = [], styledTags, scripts = [], 
                     window.__PRELOADED_STATE__ = ${renderObject(store.getState())};
                 </script>
                 
-                <script src="dist/Games.chunk.js"></script>
+                <script src="dist/Weather.chunk.js"></script>
                 ${scripts.map(script => `<script src="/dist/${script.file}"></script>`).join('\n')}
             </body>
         </html>`;

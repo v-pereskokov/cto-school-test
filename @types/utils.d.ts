@@ -26,4 +26,5 @@ declare module 'utils' {
 
     export type Nullable<T = unknown> = null | T;
     export type Empty<T = unknown> = undefined | T;
+    export type Nil<T = unknown> = Empty<T> | Nullable<T>;
 }

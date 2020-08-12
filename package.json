@@ -4,7 +4,8 @@
     "description": "Weather app",
     "main": "server/index.ts",
     "scripts": {
-        "start": "better-npm-run start",
+        "start:dev": "better-npm-run start",
+        "start": "export NODE_TLS_REJECT_UNAUTHORIZED=0 && node dist/server/server.js",
         "build:stable": "better-npm-run build:stable",
         "build:testing": "better-npm-run build:testing",
         "build:unstable": "better-npm-run build:testing",
