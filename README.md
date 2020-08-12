@@ -6,3 +6,4 @@ TODO:
 * actions
 * deploy
 * hosts
+* на каких экранах (13'+)

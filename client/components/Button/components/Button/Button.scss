@@ -14,6 +14,8 @@
     border-radius: 2px;
     outline: 0;
 
+    width: 250px;
+
     &__primary {
         @include buttonType($primary, $black);
     }

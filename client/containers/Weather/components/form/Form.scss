@@ -1,4 +1,17 @@
 .WeatherForm {
-    display: flex;
     flex-direction: column;
+
+    &,
+    &__wrapper {
+        display: flex;
+    }
+
+    &__wrapper {
+        justify-content: center;
+        align-items: center;
+
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+    }
 }

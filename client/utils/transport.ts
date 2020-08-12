@@ -36,7 +36,7 @@ export default class HTTPTransport {
             headers.set('Cookie', this._nodeCookie);
         }
 
-        return promiseTimeout<Result>(
+        return promiseTimeout<Response>(
             this.timeout,
             fetch(
                 `${this.host}${encodeURI(url)}`,
@@ -47,7 +47,10 @@ export default class HTTPTransport {
                     credentials: 'same-origin',
                 },
             ),
-        );
+        )
+            .then(response => response.json())
+            .then(data => data as Result)
+            .catch(error => error as Result);
     }
 
     public set nodeCookie(cookie) {

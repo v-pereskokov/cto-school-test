@@ -13,11 +13,11 @@ declare module 'utils' {
     }
 
     export abstract class EntityAPI {
-        abstract request?: (...args: unknown[]) => Promise<unknown>;
-        abstract create?: (...args: unknown[]) => Promise<unknown>;
-        abstract update?: (...args: unknown[]) => Promise<unknown>;
-        abstract delete?: (...args: unknown[]) => Promise<unknown>;
-        abstract find?: (...args: unknown[]) => Promise<unknown>;
+        abstract request?: (...args: any[]) => Promise<any>;
+        abstract create?: (...args: any[]) => Promise<any>;
+        abstract update?: (...args: any[]) => Promise<any>;
+        abstract delete?: (...args: any[]) => Promise<any>;
+        abstract find?: (...args: any[]) => Promise<any>;
     }
 
     export type RouteProps<T> = Assign<RouteComponentProps<T>, {

@@ -8,6 +8,6 @@ import {weatherProxy} from '../controllers/weather';
  *   - name: open-weather
  *     description: Open weather routes
  */
-export const weatherRoutes = (router: Router) => {
-    router.use('/weather', weatherProxy);
+export const weatherRoutes = (router: Router, {basePath}: {basePath: string}) => {
+    router.use(`${basePath}/weather`, weatherProxy);
 };

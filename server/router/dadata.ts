@@ -8,6 +8,6 @@ import {dadataProxy} from '../controllers/dadata';
  *   - name: dadata
  *     description: Suggests routes
  */
-export const dadataRoutes = (router: Router) => {
-    router.use('/suggests', dadataProxy);
+export const dadataRoutes = (router: Router, {basePath}: {basePath: string}) => {
+    router.use(`${basePath}/suggests`, dadataProxy);
 };

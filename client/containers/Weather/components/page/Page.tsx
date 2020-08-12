@@ -14,7 +14,9 @@ const Page = () => {
                 Оденься по погоде в своём городе.
             </h1>
 
-            <Form/>
+            <div className={b('form')}>
+                <Form/>
+            </div>
         </div>
     );
 };

@@ -7,9 +7,11 @@ import {weatherRoutes} from './weather';
 
 const router: Router = Router();
 
+const BASE_API_PATH = '/api';
+
 appRoutes(router);
-dadataRoutes(router);
-weatherRoutes(router);
+dadataRoutes(router, {basePath: BASE_API_PATH});
+weatherRoutes(router, {basePath: BASE_API_PATH});
 healthRoutes(router);
 
 export default router;

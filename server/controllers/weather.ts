@@ -7,6 +7,6 @@ export const weatherProxy = createProxyMiddleware('/', {
     secure: false,
     pathRewrite(path, _) {
         const [url, query] = path.split('?');
-        return url.replace('/weather/current', `/data/2.5/weather?appid=${OPEN_WEATHER_TOKEN}&${query}`);
+        return url.replace('/api/weather/current', `/data/2.5/weather?appid=${OPEN_WEATHER_TOKEN}&${query}`);
     },
 });
