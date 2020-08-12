@@ -1,4 +1,4 @@
-import { ErrorRequestHandler, RequestHandler, Router } from 'express';
+import {ErrorRequestHandler, RequestHandler, Router} from 'express';
 
 import index from '../controllers/app';
 import renders from '../middlewares/render';

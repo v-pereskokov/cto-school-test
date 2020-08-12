@@ -9,6 +9,7 @@ export type OwnProps = {
     handleChange?: (value: string) => void;
     mapLoadOptions?: (value: string) => RequestOptions;
     mapLoadedOptions?: DataMapper;
+    error?: string;
 };
 
 export type Props<T> = FC<OwnProps & SelectProps<T>>;

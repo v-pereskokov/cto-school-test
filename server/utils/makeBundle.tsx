@@ -17,7 +17,7 @@ interface Bundle {
     store: Indexed;
 }
 
-export function makeBundle ({bundleName, styles = [], styledTags, scripts = [], html, store}: Bundle) {
+export function makeBundle({bundleName, styles = [], styledTags, scripts = [], html, store}: Bundle) {
     // TODO: Имя страницы bundleName
 
     const helmet = Helmet.renderStatic();

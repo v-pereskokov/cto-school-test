@@ -1,9 +1,9 @@
 import cookieParser from 'cookie-parser';
 import express from 'express';
-import {parse} from 'qs';
+import rateLimit from 'express-rate-limit';
 import https from 'https';
 import selfSigned from 'openssl-self-signed-certificate';
-import rateLimit from 'express-rate-limit';
+import {parse} from 'qs';
 import Loadable from 'react-loadable';
 
 import {checkHeaders} from './controllers/checkHeaders';

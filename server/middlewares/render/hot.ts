@@ -1,12 +1,13 @@
+/* eslint-disable */
+
 // TODO: Настроить пути различные у webpack
 
+import {RequestHandler} from 'express';
+import webpack from 'webpack';
 import devMiddleware from 'webpack-dev-middleware';
 import hotMiddleware from 'webpack-hot-middleware';
-import webpack from 'webpack';
-import {RequestHandler} from 'express';
 
 import webpackConfig from '../../../webpack.config.js';
-
 import render from './render';
 
 function getWebpackMiddlewares(config: webpack.Configuration): RequestHandler[] {

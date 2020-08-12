@@ -1,5 +1,5 @@
 import React, {FC, useState, useCallback} from 'react';
-import {Empty, Nullable} from 'utils';
+import {Empty} from 'utils';
 
 import Button, {Group} from '__components/Button';
 import Select from '__components/Select';
@@ -19,8 +19,8 @@ const Form: FC = () => {
     const [country, setCountry] = useState<Empty<string>>(undefined);
     const [address, setAddress] = useState<Empty<string>>(undefined);
 
-    const [countryError, setCountryError] = useState<Nullable<string>>(null);
-    const [addressError, setAddressError] = useState<Nullable<string>>(null);
+    const [countryError, setCountryError] = useState<Empty<string>>(undefined);
+    const [addressError, setAddressError] = useState<Empty<string>>(undefined);
 
     const handleAddressMapOptions = useCallback((value: string) => ({
         query: value,
@@ -46,23 +46,35 @@ const Form: FC = () => {
         }
     }, [country, address]);
 
+    const handleCountryChange = useCallback((value: string) => {
+        setCountry(value);
+        setCountryError(undefined);
+        setAddressError(undefined);
+    }, []);
+
+    const handleAddressChange = useCallback((value: string) => {
+        setAddress(value);
+        setAddressError(undefined);
+        setCountryError(undefined);
+    }, []);
+
     return (
         <form className={b()} onSubmit={handleSubmit}>
-            {countryError}
-            {addressError}
             <div className={b('wrapper')}>
                 <Select
                     suggest="country"
                     placeholder="Страна"
-                    handleChange={setCountry}
+                    handleChange={handleCountryChange}
+                    error={countryError}
                     autoFocus
                 />
                 <Select
                     suggest="address"
                     placeholder="Город"
-                    handleChange={setAddress}
+                    handleChange={handleAddressChange}
                     mapLoadOptions={handleAddressMapOptions}
                     mapLoadedOptions={addressLoadedMapper}
+                    error={addressError}
                 />
             </div>
 

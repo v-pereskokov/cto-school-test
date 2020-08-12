@@ -10,9 +10,11 @@ import {ServerStyleSheet, StyleSheetManager} from 'styled-components';
 import Core from '__containers/Core';
 import {reducers} from '__reducers';
 import configureStore from '__store';
-import {makeBundle} from '../../utils/makeBundle';
 
 const manifest = require('../../../dist/client/react-loadable-ssr-addon.json');
+
+import {makeBundle} from '../../utils/makeBundle';
+
 
 export default function (req: Request, res: Response, next: NextFunction) {
     res.renderBundle = (bundleName: string) => {
