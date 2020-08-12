@@ -6,7 +6,7 @@
 Сервис призван помогать пользователю быстро определить погоду в своем населенном пункте и советовать, а что необходимо надеть сегодня на улицу, чтобы чувствовать себя комфортно.  
 
 ## Хосты
-* stable — [https://tst-01.vpa.group:4010](https://tst-01.vpa.group:4010)
+* stable — [https://cto-test.ivpa.ru:4010](https://cto-test.ivpa.ru:4010)
 * dev — [https://localhost:4000](https://localhost:4000)
 
 Посмотреть функционал можно и на [видео](https://yadi.sk/i/5TJb69CfRsKxEQ)
