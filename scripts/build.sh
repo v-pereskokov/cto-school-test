@@ -1,10 +1,11 @@
 #!/bin/bash
 set -e
 
-TAG=${1:-`date '+%Y%m%d%H%M%S'`}
-REGISTRY=${2:-vpereskokov/vpagroup}
-BUILD=${3:-testing}
-PORT=${4:-4000}
+BUILD=${1:-testing}
+TAG=${2:-`date '+%Y%m%d%H%M%S'`}
+
+REGISTRY="vpereskokov/vpagroup"
+PORT=4000
 
 echo "${TAG}" "${REGISTRY}" "${BUILD}" "${PORT}"
 
