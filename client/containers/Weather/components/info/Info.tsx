@@ -99,7 +99,7 @@ const Info: FC = () => {
                         <td>{temp}</td>
                     </tr>
                     <tr>
-                        <td>Максимальная / минимальная температуры</td>
+                        <td>Макс / мин температуры</td>
                         <td>{temp_max} / {temp_min}</td>
                     </tr>
                 </table>
