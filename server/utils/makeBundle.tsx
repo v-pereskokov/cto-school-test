@@ -44,7 +44,7 @@ export function makeBundle ({bundleName, styles = [], styledTags, scripts = [], 
                 <link href="dist/app.css" rel="preload">
                 <link href="dist/Weather.css" rel="preload">
                 ${styledTags}
-                ${styles.map(style => `<style rel="preload">${fs.readFileSync(`dist/client/${style.file}`, 'utf-8')}</style>`).join('\n')}
+                ${styles.map(style => `<style rel="stylesheet">${fs.readFileSync(`dist/client/${style.file}`, 'utf-8')}</style>`).join('\n')}
             </head>
 
             <body>
@@ -53,7 +53,7 @@ export function makeBundle ({bundleName, styles = [], styledTags, scripts = [], 
                     window.__PRELOADED_STATE__ = ${renderObject(store.getState())};
                 </script>
                 
-                <script src="dist/Weather.chunk.js"></script>
+                <script src="dist/Weather.chunk.js" rel="preload"></script>
                 ${scripts.map(script => `<script src="/dist/${script.file}"></script>`).join('\n')}
             </body>
         </html>`;

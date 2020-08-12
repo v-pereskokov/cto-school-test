@@ -48,6 +48,8 @@ const Form: FC = () => {
 
     return (
         <form className={b()} onSubmit={handleSubmit}>
+            {countryError}
+            {addressError}
             <div className={b('wrapper')}>
                 <Select
                     suggest="country"

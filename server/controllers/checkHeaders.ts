@@ -18,10 +18,6 @@ const envKeys = Object.keys(ENV_HOSTS);
 export function checkHeaders(req: Request, res: Response, next: NextFunction) {
     const {host} = req.headers;
 
-    res.set({
-        'X-Service-Host': host,
-    });
-
     for (const env of envKeys) {
         const hosts = ENV_HOSTS[env].map(item => item.toLowerCase());
         for (const appHost of hosts) {

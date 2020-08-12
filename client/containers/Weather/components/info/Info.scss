@@ -1,0 +1,11 @@
+.WeatherInfo {
+    margin-top: 64px;
+
+    &__divider {
+        border-top: 1px solid $black;
+    }
+
+    &__loader {
+        text-align: center;
+    }
+}

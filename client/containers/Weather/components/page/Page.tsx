@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 
 import Form from '../form';
+import Info from '../info';
 import Map from '../map';
 
 import {b} from './Page.scss';
 
-const Page = () => {
+const Page: FC = () => {
     return (
         <div className={b()}>
             <Map/>
@@ -17,6 +18,8 @@ const Page = () => {
             <div className={b('form')}>
                 <Form/>
             </div>
+
+            <Info/>
         </div>
     );
 };
