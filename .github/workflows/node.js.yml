@@ -27,7 +27,7 @@ jobs:
     - run: npm run lint
     - run: npm run build:stable
     - run: npm test
-    - run: echo "TEST=${{ TEST }}" > .env.test
+    - run: echo "TEST=${{ secrets.TEST }}" > .env.test
     - run: cat .env.test
 
   deploy:
@@ -37,6 +37,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Docker login
-        run: docker login -u ${{ DOCKER_LOGIN }} -p ${{ DOCKER_PSWD }}
+        run: docker login -u ${{ secrets.DOCKER_LOGIN }} -p ${{ secrets.DOCKER_PSWD }}
       - name: Build the app
         run: bash srcipts/build.sh stable
